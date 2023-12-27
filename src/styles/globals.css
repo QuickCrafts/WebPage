@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?  family=Montserrat:ital,wght@0,100;0,200;1,100;1,200&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --default-background-color: #ffffff;
+
+  --gray-light: #f9fbff;
+  --gray: #6c6c79;
+  --black: #34343d;
+  --white: #ffffff;
+
+  --primary-main: #F69A0B;
+  --primary-light: #FBD6A2;
+  --primary-dark: #F6780B;
+
+  --secondary-main: #A8A39D;
+  --secondary-light: #F8F1E9;
+  --secondary-dark: #807d7a;
+
+  --accent-main: #5A2D16;
+  --accent-light: #C0805D;
+  --accent-dark: #3d1f0f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --default-background-color: #ffffff;
+
+    --gray-light: #f9fbff;
+    --gray: #6c6c79;
+    --black: #34343d;
+    --white: #ffffff;
+
+    --primary-main: #F69A0B;
+    --primary-light: #FBD6A2;
+    --primary-dark: #F6780B;
+
+    --secondary-main: #A8A39D;
+    --secondary-light: #F8F1E9;
+    --secondary-dark: #807d7a;
+
+    --accent-main: #5A2D16;
+    --accent-light: #C0805D;
+    --accent-dark: #3d1f0f;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--black);
+  background-color: var(--default-background-color);
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1.5px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.thumbs-wrapper.axis-vertical {
+  display: none;
+}
+
+.indicator-primary {
+  background-color: var(--primary-main);
+}
+
+.indicator-secondary {
+  background-color: var(--secondary-main);
+}
+
+.indicator-accent {
+  background-color: var(--accent-main);
+}
+
+.max-w-xs {
+  background-color: var(--gray-light);
+  color: var(--black);
+}
+
+.font-medium {
+  color: var(--primary-dark);
+}
+
+.after\:bg-foreground::after {
+  background-color: var(--primary-dark) !important;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+  background-color: transparent;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker {
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--primary-dark);
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+  background-color: transparent;
+  color: var(--black);
+  outline: none;
+}
+
+.react-datepicker__header {
+  border-bottom: 1px solid var(--primary-dark);
+  background-color: transparent;
+  color: var(--primary-dark);
+}
+
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
+  color: var(--primary-dark);
+}
+
+.react-datepicker__day-name {
+  color: var(--primary-dark);
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--primary-dark);
+}
+
+.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before {
+  border-bottom-color: var(--primary-dark);
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {
+  background-color: var(--primary-dark);
+}
+
+.react-datepicker__year-dropdown,
+.react-datepicker__month-dropdown,
+.react-datepicker__month-year-dropdown {
+  overflow: scroll;
+}
+
+.max-w-xs {
+  max-width: 100%;
+}
+
+ol,
+ul,
+menu {
+  list-style: inside !important;
+  margin: 0;
+  padding: 0;
+}
+
+.audio-recorder-mic {
+  display: none !important;
+}
+
+.audio-recorder {
+  background-color: #ffffff !important;
+}
+
+/* images responsive */
+.Home_Image {
+  width: 550px;
+  height: 550px;
+  min-width: 550px;
+  min-height: 550px;
+}
+
+@media screen and (max-width: 900px) {
+  .Home_Image {
+    width: 250px !important;
+    height: 250px !important;
+    min-width: 250px !important;
+    min-height: 250px !important;
+  }
+}
+
+.primaryTitle {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.primaryTitle_White {
+  color: var(--white);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.primaryTitle_Black {
+  color: var(--black);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.primaryTitle_Primary {
+  color: var(--primary-main);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.primaryTitle_Secondary {
+  color: var(--secondary-main);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.secondaryTitle {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.primarySubtitle {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.secondarySubtitle {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.generalText {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.generalText_Bold {
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

@@ -3,14 +3,216 @@ import Global from "../components/Global.astro";
 import Header from "../components/Header.astro";
 import Fondo from "../layouts/Fondo.astro";
 import GeneralPage from "../layouts/GeneralPage.astro";
+import TeamMember from "../interfaces/teamMember.astro";
+import { getImageMedia } from '../helpers/socialMedia';
+
+const team: TeamMember[] = [
+    {
+        name: "Paula Guzmán",
+        role: "UX/UI & Frontend Dev",
+        image: "../../public/team/PhotoPaula.jpg",
+        socialMedia: [
+            {
+                name: "GITHUB",
+                link: "https://github.com/Paula2208",
+            },
+            {
+                name: "LINKEDIN",
+                link: "https://www.linkedin.com/in/paula-guzman-2208/",
+            },
+        ],
+    },
+    {
+        name: "Daniel Osuna",
+        role: "Arquitecto BD & Frontend Dev",
+        image: "../../public/team/PhotoDaniel.png",
+        socialMedia: [
+            {
+                name: "GITHUB",
+                link: "https://github.com/dgosunar",
+            },
+            {
+                name: "LINKEDIN",
+                link: "https://www.linkedin.com/in/daniel-osuna-r/",
+            },
+        ],
+    },
+    {
+        name: "Dylan Rivero",
+        role: "DevOps BD & Backend Dev",
+        image: "../../public/team/PhotoDylan.jpg",
+        socialMedia: [
+            {
+                name: "GITHUB",
+                link: "",
+            },
+            {
+                name: "LINKEDIN",
+                link: "",
+            },
+        ],
+    },
+    {
+        name: "Sebastian Escandón",
+        role: "QA & Backend Dev",
+        image: "../../public/team/PhotoSebastian.jpg",
+        socialMedia: [
+            {
+                name: "GITHUB",
+                link: "https://github.com/sescandon",
+            },
+            {
+                name: "LINKEDIN",
+                link: "https://www.linkedin.com/in/sescandon23/",
+            },
+        ],
+    },
+];
 ---
 
 <Global>
-	<Header route="/aboutUs" />
-	<GeneralPage>
-		<h1>¿Quienes Somos?</h1>
-	</GeneralPage>
-	<Fondo />
+    <Header route="/aboutUs" />
+    <GeneralPage>
+        <div class="product">
+            <div class="presentation">
+                <div class="primaryTitle_Primary">¿Quienes Somos?</div>
+                <div class="generalText">
+                    Somos una startup que desarrolla aplicaciones para mejorar
+                    los principales aspectos de la vida de los usuarios. Nuestro
+                    enfoque es ayudar a las personas a tener más confianza con
+                    sus finanzas, tareas, hábitos y más.
+                </div>
+            </div>
+            <div class="primaryTitle_Secondary">Conoce a nuestro equipo</div>
+            <div class="mosaic">
+                {
+                    team.map((member) => (
+                        <div class="card">
+                            <div class="photo">
+                                <img src={member.image || ""} />
+                            </div>
+                            <div class="description">
+                                <div class="name">{member.name}</div>
+                                <div class="role">{member.role}</div>
+                                <div class="socialMediaContainer">
+                                    {member.socialMedia.map((s) => (
+                                        <div class="icono">
+                                            <a href={s.link} target="_blank">
+                                                <img
+                                                    src={getImageMedia(
+                                                        s.name,
+                                                        "dark",
+                                                    )}
+                                                />
+                                            </a>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </GeneralPage>
+    <Fondo />
 </Global>
 
-<style></style>
+<style>
+    .product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        flex: 1 0 0;
+        align-self: stretch;
+        justify-content: flex-start;
+    }
+    .presentation {
+        display: flex;
+        padding: 20px;
+        width: 70%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .mosaic {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        width: 100%;
+        place-content: center;
+        align-items: center;
+    }
+    .card {
+        display: flex;
+        width: 260px;
+        height: 330px;
+        min-width: 260px;
+        min-height: 330px;
+        padding: 14px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        background: rgb(255, 255, 255);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+    }
+    .photo {
+        max-width: 200px;
+        max-height: 200px;
+        min-width: 200px;
+        min-height: 200px;
+        width: 200px;
+        height: 200px;
+        align-self: center;
+        border-radius: 8px;
+        background: var(--gray);
+    }
+    .description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        align-self: stretch;
+    }
+    .name {
+        align-self: stretch;
+        color: var(--Black-sentence, #4f4a4a);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 33px;
+        letter-spacing: -1.5px;
+    }
+    .role {
+        align-self: stretch;
+        color: var(--Black-sentence, #4f4a4a);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .socialMediaContainer {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+    }
+    .icono {
+        display: flex;
+        width: 25px;
+        height: 25px;
+        justify-content: center;
+        align-items: center;
+        padding-right: 1px;
+        gap: 10px;
+        border-radius: 50%;
+        background: var(--primary-light);
+    }
+</style>

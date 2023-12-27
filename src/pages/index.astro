@@ -8,9 +8,39 @@ import Fondo from "../layouts/Fondo.astro";
 <Global>
 	<Header route="/" />
 	<GeneralPage>
-		<h1>Bienvenidos a QuickCrafts</h1>
+		<div class="home">
+			<div class="presentation">
+				<img src="../../LogoCompleto.png" />
+				<div class="secondarySubtitle">
+					Desarrollando para mejorar tu vida
+				</div>
+			</div>
+			<div class="imagen">
+				<img src="../../App_icon_v1.png" />
+			</div>
+		</div>
 	</GeneralPage>
 	<Fondo />
 </Global>
 
-<style></style>
+<style>
+	.home {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: 40px;
+	}
+	.presentation {
+		display: flex;
+		padding: 20px;
+		width: 40%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 20px;
+	}
+	.imagen {
+		width: 30%;
+	}
+</style>

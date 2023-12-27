@@ -3,14 +3,42 @@ import Global from "../components/Global.astro";
 import Header from "../components/Header.astro";
 import Fondo from "../layouts/Fondo.astro";
 import GeneralPage from "../layouts/GeneralPage.astro";
+import "../styles/globals.css";
 ---
 
 <Global>
-	<Header route="/product" />
-	<GeneralPage>
-		<h1>Productos</h1>
-	</GeneralPage>
-	<Fondo />
+    <Header route="/product" />
+    <GeneralPage>
+        <div class="product">
+            <div class="presentation">
+                <div class="primaryTitle_Primary">Productos</div>
+                <div class="generalText">
+                    Con estas herramientas queremos ayudarte a mejorar
+                    diferentes aspectos de tu vida diaria.
+                </div>
+            </div>
+        </div>
+    </GeneralPage>
+    <Fondo />
 </Global>
 
-<style></style>
+<style>
+    .product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        flex: 1 0 0;
+        align-self: stretch;
+    }
+    .presentation {
+        display: flex;
+        padding: 20px;
+        width: 70%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+</style>

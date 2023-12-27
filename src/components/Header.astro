@@ -1,5 +1,5 @@
 ---
-const {route} = Astro.props;
+const { route } = Astro.props;
 
 const routeTitles = [
     {
@@ -29,7 +29,9 @@ const routeTitles = [
         {
             routeTitles.map((t) => (
                 <a href={t.route}>
-                    <div class={t.route === route ? "item-select":"item"}>{t.label}</div>
+                    <div class={t.route === route ? "item-select" : "item"}>
+                        {t.label}
+                    </div>
                 </a>
             ))
         }
@@ -66,7 +68,7 @@ const routeTitles = [
         text-align: center;
         font-size: 16px;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 500;
         line-height: normal;
         border-radius: 8px;
         cursor: pointer;

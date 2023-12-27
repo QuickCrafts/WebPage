@@ -1,7 +1,6 @@
 ---
 import Global from "../components/Global.astro";
 import Header from "../components/Header.astro";
-import Fondo from "../layouts/Fondo.astro";
 import GeneralPage from "../layouts/GeneralPage.astro";
 import TeamMember from "../interfaces/teamMember.astro";
 import { getImageMedia } from "../helpers/socialMedia";
@@ -24,7 +23,7 @@ const team: TeamMember[] = [
     },
     {
         name: "Daniel Osuna",
-        role: "Arquitecto BD & Frontend Dev",
+        role: "BD Architect & Frontend Dev",
         image: "../../public/team/PhotoDaniel.png",
         socialMedia: [
             {
@@ -115,7 +114,6 @@ const team: TeamMember[] = [
             </div>
         </div>
     </GeneralPage>
-    <Fondo />
 </Global>
 
 <style>

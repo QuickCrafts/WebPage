@@ -2,28 +2,35 @@
 import Global from "../components/Global.astro";
 import Header from "../components/Header.astro";
 import GeneralPage from "../layouts/GeneralPage.astro";
-import Fondo from "../layouts/Fondo.astro";
 ---
 
 <Global>
 	<Header route="/" />
 	<GeneralPage>
-		<div class="home">
-			<div class="presentation">
-				<img src="../../LogoCompleto.png" />
-				<div class="secondarySubtitle">
-					Desarrollando para mejorar tu vida
+		<div class="general">
+			<div class="home">
+				<div class="presentation">
+					<img src="../../LogoCompleto.png" />
+					<div class="secondarySubtitle">
+						Desarrollando para mejorar tu vida
+					</div>
 				</div>
-			</div>
-			<div class="imagen">
-				<img src="../../App_icon_v1.png" />
+				<div class="imagen">
+					<img src="../../App_icon_v1.png" />
+				</div>
 			</div>
 		</div>
 	</GeneralPage>
-	<Fondo />
 </Global>
 
 <style>
+	.general {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+	}
 	.home {
 		display: flex;
 		flex-direction: row;

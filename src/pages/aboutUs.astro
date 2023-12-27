@@ -4,7 +4,7 @@ import Header from "../components/Header.astro";
 import Fondo from "../layouts/Fondo.astro";
 import GeneralPage from "../layouts/GeneralPage.astro";
 import TeamMember from "../interfaces/teamMember.astro";
-import { getImageMedia } from '../helpers/socialMedia';
+import { getImageMedia } from "../helpers/socialMedia";
 
 const team: TeamMember[] = [
     {
@@ -158,6 +158,8 @@ const team: TeamMember[] = [
         align-items: center;
         gap: 10px;
         flex-shrink: 0;
+        border-style: solid;
+        border-width: 1px;
         border-radius: 8px;
         background: rgb(255, 255, 255);
         box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;

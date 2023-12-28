@@ -1,24 +1,75 @@
 ---
 import Global from "../components/Global.astro";
-import Header from "../components/Header.astro";
-import Fondo from "../layouts/Fondo.astro";
-import GeneralPage from "../layouts/GeneralPage.astro";
 import "../styles/globals.css";
+
+const products: any[] = [
+    {
+        name: "QuickFins",
+        url: "https://quickfins.co/",
+        icon: "../../public/products/QuickFins/QuickFins.png",
+        slogan: "El mejor amigo de tus finanzas personales.",
+        description:
+            "QuickFins es una aplicación web que te ayuda a gestionar tus finanzas personales, registrando ingresos, gastos y más.",
+    },
+    {
+        name: "",
+        url: "",
+        icon: "",
+        slogan: "",
+        description: "",
+    },
+    {
+        name: "",
+        url: "",
+        icon: "",
+        slogan: "",
+        description: "",
+    },
+    {
+        name: "",
+        url: "",
+        icon: "",
+        slogan: "",
+        description: "",
+    },
+    {
+        name: "",
+        url: "",
+        icon: "",
+        slogan: "",
+        description: "",
+    },
+];
 ---
 
-<Global>
-    <Header route="/product" />
-    <GeneralPage>
-        <div class="product">
-            <div class="presentation">
-                <div class="primaryTitle_Primary">Productos</div>
-                <div class="generalText">
-                    Con estas herramientas queremos ayudarte a mejorar
-                    diferentes aspectos de tu vida diaria.
-                </div>
+<Global route="/product">
+    <div class="product">
+        <div class="presentation">
+            <div class="primaryTitle_Primary">Productos</div>
+            <div class="generalText">
+                Con estas herramientas queremos ayudarte a mejorar diferentes
+                aspectos de tu vida diaria.
             </div>
         </div>
-    </GeneralPage>
+        {
+            products.map((product) => (
+                <div class="productCards">
+                    <div class="productDescription">
+                        <a href={product.url} target="_blank">
+                            <div class="productIcon">
+                                <img src={product.icon} />
+                            </div>
+                        </a>
+                        <div class="generalText">{product.slogan}</div>
+                        <div class="generalText">{product.description}</div>
+                    </div>
+                    <div class="carrusel">
+                        <img src={product.icon} />
+                    </div>
+                </div>
+            ))
+        }
+    </div>
 </Global>
 
 <style>
@@ -32,12 +83,43 @@ import "../styles/globals.css";
     }
     .presentation {
         display: flex;
-        padding: 20px;
         width: 70%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
         gap: 20px;
+    }
+    .productCards {
+        display: flex;
+        padding: 20px 40px;
+        align-items: center;
+        gap: 30px;
+        align-self: stretch;
+        border-radius: 20px;
+        border: 1px solid #d8d8d8;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .productDescription {
+        display: flex;
+        height: 304px;
+        padding: 0px 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        flex: 1 0 0;
+    }
+    .productIcon {
+        height: 50px;
+        width: 175px;
+    }
+    .carrusel {
+        display: flex;
+        padding: 0px 30px;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
     }
 </style>

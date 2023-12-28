@@ -1,14 +1,11 @@
 ---
 import Global from "../components/Global.astro";
-import Header from "../components/Header.astro";
-import GeneralPage from "../layouts/GeneralPage.astro";
 ---
 
-<Global>
-	<Header route="/contact" />
-	<GeneralPage>
-        <div class="primaryTitle_Primary">Contáctenos</div>
-	</GeneralPage>
+<Global route="/contact">
+    <div class="primaryTitle_Primary">Contáctenos</div>
+    
+    <img src="../../public/image/contact.png">
 </Global>
 
 <style></style>

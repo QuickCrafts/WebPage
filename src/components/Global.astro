@@ -1,11 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Fondo from "../layouts/Fondo.astro";
+import Header from "../components/Header.astro";
+import GeneralPage from "../layouts/GeneralPage.astro";
+const { route } = Astro.props;
 ---
 
 <Layout title="QuickCrafts">
 	<main>
-		<slot />
+		<Header route={route} />
+		<GeneralPage>
+			<slot />
+		</GeneralPage>
 	</main>
 	<Fondo />
 </Layout>

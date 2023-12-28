@@ -1,7 +1,7 @@
 import type { NameMedia } from "../interfaces/teamMember.astro";
 
 export const getImageMedia = (media: NameMedia, style: 'dark' | 'light'): string => {
-    const route = '/media/' + style;
+    const route = '../../public/media/' + style;
 
     switch (media) {
         case 'FACEBOOK':

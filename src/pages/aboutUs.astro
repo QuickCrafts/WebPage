@@ -1,7 +1,5 @@
 ---
 import Global from "../components/Global.astro";
-import Header from "../components/Header.astro";
-import GeneralPage from "../layouts/GeneralPage.astro";
 import TeamMember from "../interfaces/teamMember.astro";
 import { getImageMedia } from "../helpers/socialMedia";
 
@@ -43,11 +41,11 @@ const team: TeamMember[] = [
         socialMedia: [
             {
                 name: "GITHUB",
-                link: "",
+                link: "https://github.com/XdmriveroeX",
             },
             {
                 name: "LINKEDIN",
-                link: "",
+                link: "https://www.linkedin.com/in/dylan-rivero-67b8261a7/",
             },
         ],
     },
@@ -69,51 +67,48 @@ const team: TeamMember[] = [
 ];
 ---
 
-<Global>
-    <Header route="/aboutUs" />
-    <GeneralPage>
-        <div class="product">
-            <div class="presentation">
-                <div class="primaryTitle_Primary">¿Quienes Somos?</div>
-                <div class="generalText">
-                    Somos una startup que desarrolla aplicaciones para mejorar
-                    los principales aspectos de la vida de los usuarios. Nuestro
-                    enfoque es ayudar a las personas a tener más confianza con
-                    sus finanzas, tareas, hábitos y más.
-                </div>
-            </div>
-            <div class="primaryTitle_Secondary">Conoce a nuestro equipo</div>
-            <div class="mosaic">
-                {
-                    team.map((member) => (
-                        <div class="card">
-                            <div class="photo">
-                                <img src={member.image || ""} />
-                            </div>
-                            <div class="description">
-                                <div class="name">{member.name}</div>
-                                <div class="role">{member.role}</div>
-                                <div class="socialMediaContainer">
-                                    {member.socialMedia.map((s) => (
-                                        <div class="icono">
-                                            <a href={s.link} target="_blank">
-                                                <img
-                                                    src={getImageMedia(
-                                                        s.name,
-                                                        "dark",
-                                                    )}
-                                                />
-                                            </a>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    ))
-                }
+<Global route="/aboutUs">
+    <div class="product">
+        <div class="presentation">
+            <div class="primaryTitle_Primary">¿Quienes Somos?</div>
+            <div class="generalText">
+                Somos una startup que desarrolla aplicaciones para mejorar los
+                principales aspectos de la vida de los usuarios. Nuestro enfoque
+                es ayudar a las personas a tener más confianza con sus finanzas,
+                tareas, hábitos y más.
             </div>
         </div>
-    </GeneralPage>
+        <div class="primaryTitle_Secondary">Conoce a nuestro equipo</div>
+        <div class="mosaic">
+            {
+                team.map((member) => (
+                    <div class="card">
+                        <div class="photo">
+                            <img src={member.image || ""} />
+                        </div>
+                        <div class="description">
+                            <div class="name">{member.name}</div>
+                            <div class="role">{member.role}</div>
+                            <div class="socialMediaContainer">
+                                {member.socialMedia.map((s) => (
+                                    <div class="icono">
+                                        <a href={s.link} target="_blank">
+                                            <img
+                                                src={getImageMedia(
+                                                    s.name,
+                                                    "dark",
+                                                )}
+                                            />
+                                        </a>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
 </Global>
 
 <style>
@@ -128,7 +123,6 @@ const team: TeamMember[] = [
     }
     .presentation {
         display: flex;
-        padding: 20px;
         width: 70%;
         flex-direction: column;
         justify-content: center;

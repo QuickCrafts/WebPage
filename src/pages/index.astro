@@ -1,26 +1,21 @@
 ---
 import Global from "../components/Global.astro";
-import Header from "../components/Header.astro";
-import GeneralPage from "../layouts/GeneralPage.astro";
 ---
 
-<Global>
-	<Header route="/" />
-	<GeneralPage>
-		<div class="general">
-			<div class="home">
-				<div class="presentation">
-					<img src="../../LogoCompleto.png" />
-					<div class="secondarySubtitle">
-						Desarrollando para mejorar tu vida
-					</div>
-				</div>
-				<div class="imagen">
-					<img src="../../App_icon_v1.png" />
+<Global route="/">
+	<div class="general">
+		<div class="home">
+			<div class="presentation">
+				<img src="../../LogoCompleto.png" />
+				<div class="secondarySubtitle">
+					Desarrollando para mejorar tu vida
 				</div>
 			</div>
+			<div class="imagen">
+				<img src="../../public/image/team.png" />
+			</div>
 		</div>
-	</GeneralPage>
+	</div>
 </Global>
 
 <style>
@@ -35,19 +30,18 @@ import GeneralPage from "../layouts/GeneralPage.astro";
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: space-around;
 		gap: 40px;
 	}
 	.presentation {
 		display: flex;
-		padding: 20px;
 		width: 40%;
 		flex-direction: column;
 		justify-content: center;
-		align-items: flex-start;
+		align-items: center;
 		gap: 20px;
 	}
 	.imagen {
-		width: 30%;
+		width: 40%;
 	}
 </style>

@@ -51,6 +51,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -202,7 +203,7 @@ menu {
 }
 
 .primaryTitle {
-  font-size: 48px;
+  font-size: 44px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -210,7 +211,7 @@ menu {
 
 .primaryTitle_White {
   color: var(--white);
-  font-size: 48px;
+  font-size: 44px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -218,7 +219,7 @@ menu {
 
 .primaryTitle_Black {
   color: var(--black);
-  font-size: 48px;
+  font-size: 44px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -226,15 +227,15 @@ menu {
 
 .primaryTitle_Primary {
   color: var(--primary-main);
-  font-size: 48px;
+  font-size: 44px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
 .primaryTitle_Secondary {
-  color: var(--secondary-main);
-  font-size: 48px;
+  color: var(--secondary-dark);
+  font-size: 44px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;

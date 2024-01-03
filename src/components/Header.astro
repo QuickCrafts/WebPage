@@ -7,12 +7,12 @@ const routeTitles = [
         route: "/",
     },
     {
-        label: "Productos",
-        route: "/product",
-    },
-    {
         label: "¿Quiénes Somos?",
         route: "/aboutUs",
+    },
+    {
+        label: "Productos",
+        route: "/product",
     },
     {
         label: "Contáctenos",
@@ -21,34 +21,66 @@ const routeTitles = [
 ];
 ---
 
-<div class="header">
-    <a href="/">
-        <img class="logo" src="../../LogoCompleto.png" />
-    </a>
-    <div class="elements">
-        {
-            routeTitles.map((t) => (
-                <a href={t.route}>
-                    <div class={t.route === route ? "item-select" : "item"}>
-                        {t.label}
-                    </div>
-                </a>
-            ))
-        }
+<>
+    <div class="header">
+        <div class="cont">
+            <a href="/">
+                <img class="logo" src="../../LogoCompleto.png" />
+            </a>
+            <div class="elements">
+                {
+                    routeTitles.map((t) => (
+                        <a href={t.route}>
+                            <div
+                                class={
+                                    t.route === route ? "item-select" : "item"
+                                }
+                            >
+                                {t.label}
+                            </div>
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
     </div>
-</div>
-
+    <div class="responsiveNav">
+        <div class="columnNav">
+            <img class="logo" src="../../public/LogoCompleto.png" />
+            <div class="elementsResponsive">
+                {
+                    routeTitles.map((t) => (
+                        <a href={t.route}>
+                            <div
+                                class={
+                                    t.route === route ? "item-select" : "item"
+                                }
+                            >
+                                {t.label}
+                            </div>
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</>
 <style>
     .header {
         display: flex;
         position: fixed;
+        padding: 15px 34px;
         height: 50px;
         width: 100vw;
-        padding: 15px 34px;
-        justify-content: space-between;
         align-items: center;
+        justify-content: center;
         background: #fff;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .cont {
+        display: flex;
+        justify-content: space-between;
+        width: 90vw;
     }
     .logo {
         height: 35px;
@@ -59,6 +91,50 @@ const routeTitles = [
         align-items: center;
         gap: 30px;
         flex-shrink: 0;
+
+        @media screen and (max-width: 850px) {
+            /*display: none !important;*/
+        }
+    }
+    .responsiveNav {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 0px;
+        right: 0px;
+        z-index: 1000;
+        /*display: flex !important;*/
+        display: none !important;
+
+        @media screen and (min-width: 850px) {
+            display: none !important;
+        }
+    }
+    .columnNav {
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        overflow: hidden;
+        background: var(--secondary-light);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+        width: 250px;
+        height: 100vh;
+    }
+    .elementsResponsive {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        padding: 0px 12px;
     }
     .item {
         display: flex;
@@ -72,7 +148,10 @@ const routeTitles = [
         line-height: normal;
         border-radius: 8px;
         cursor: pointer;
-        color: var(--A8A39D, #a8a39d);
+        color: var(--secondary-dark);
+    }
+    .item:hover {
+        color: var(--primary-main);
     }
 
     .item-select {
@@ -87,7 +166,7 @@ const routeTitles = [
         line-height: normal;
         border-radius: 8px;
         cursor: pointer;
-        color: var(--F6780B, #f6780b);
-        border: 1px solid var(--F6780B, #f6780b);
+        color: var(--primary-main);
+        border: 1px solid var(--primary-main);
     }
 </style>

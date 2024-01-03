@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Fondo from "../layouts/Fondo.astro";
-import Header from "../components/Header.astro";
+import Header from "./Header.astro";
 import GeneralPage from "../layouts/GeneralPage.astro";
 const { route } = Astro.props;
 ---
@@ -13,7 +12,6 @@ const { route } = Astro.props;
 			<slot />
 		</GeneralPage>
 	</main>
-	<Fondo />
 </Layout>
 
 <style>

@@ -3,6 +3,7 @@
 	<div class="rectangle2"></div>
 	<div class="rectangle3"></div>
 	<div class="rectangle4"></div>
+	<div class="rectangle5"></div>
 </div>
 
 <style>
@@ -15,39 +16,49 @@
 		width: 90vh;
 		height: 90vh;
 		transform: rotate(32deg);
-		background: #f69a0b;
+		background: var(--primary-main);
 		top: 10%;
 		left: 65%;
 		z-index: -1;
 	}
 	.rectangle2 {
 		position: fixed;
-		width: 90vh;
-		height: 90vh;
+		width: 45vh;
+		height: 45vh;
 		transform: rotate(32deg);
-		background: #f69a0b;
-		bottom: 10%;
-		right: 65%;
+		background: var(--secondary-main);
+		top: 85%;
+		left: 35%;
 		z-index: -1;
 	}
 	.rectangle3 {
 		position: fixed;
-		width: 90vh;
-		height: 90vh;
+		width: 45vh;
+		height: 45vh;
 		transform: rotate(32deg);
-		background: #d8d8d8;
-		top: 95%;
-		left: 28%;
+		background: var(--secondary-main);
+		bottom: 85%;
+		right: 35%;
 		z-index: -1;
 	}
 	.rectangle4 {
 		position: fixed;
-		width: 90vh;
-		height: 90vh;
+		width: 25vh;
+		height: 25vh;
 		transform: rotate(32deg);
-		background: #d8d8d8;
-		bottom: 95%;
-		right: 28%;
+		background: var(--primary-main);
+		bottom: -15%;
+		right: 80%;
+		z-index: -1;
+	}
+	.rectangle5 {
+		position: fixed;
+		width: 25vh;
+		height: 25vh;
+		transform: rotate(32deg);
+		background: var(--primary-main);
+		top: -15%;
+		left: 20%;
 		z-index: -1;
 	}
 </style>

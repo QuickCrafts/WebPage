@@ -1,4 +1,4 @@
-import type { NameMedia } from "../interfaces/teamMember.astro";
+import type { NameMedia } from "../interfaces/teamMember.ts";
 
 export const getImageMedia = (media: NameMedia, style: 'dark' | 'light'): string => {
     const route = '../../public/media/' + style;

@@ -1,5 +1,6 @@
 ---
 import Global from "../components/Global.astro";
+import Fondo from "../backgrounds/BackHome.astro";
 ---
 
 <Global route="/">
@@ -10,18 +11,23 @@ import Global from "../components/Global.astro";
 				<div class="secondarySubtitle">
 					Desarrollando para mejorar tu vida
 				</div>
+				<a
+					href="https://www.linkedin.com/company/quickcrafts"
+					class="generalText botton"
+					target="_blank">LinkedIn</a
+				>
 			</div>
 			<div class="imagen">
 				<img src="../../team.png" />
 			</div>
 		</div>
 	</div>
+	<Fondo />
 </Global>
 
 <style>
 	.general {
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
@@ -32,16 +38,45 @@ import Global from "../components/Global.astro";
 		align-items: center;
 		justify-content: space-around;
 		gap: 40px;
+		@media screen and (max-width: 850px) {
+			flex-direction: column;
+			gap: 0px;
+		}
+		@media screen and (max-width: 450px) {
+			flex-direction: column;
+			gap: 40px;
+		}
 	}
 	.presentation {
 		display: flex;
-		width: 40%;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
 		gap: 20px;
+		width: 40%;
+
+		@media screen and (max-width: 850px) {
+			width: 80%;
+		}
 	}
 	.imagen {
-		width: 40%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 31vw;
+		@media screen and (max-width: 850px) {
+			width: 80%;
+		}
+	}
+	.botton {
+		padding: 15px;
+		border-radius: 8px;
+
+		background: var(--primary-main);
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+	}
+	.botton:hover {
+		color: var(--white);
 	}
 </style>

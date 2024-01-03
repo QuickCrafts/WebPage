@@ -27,9 +27,13 @@ import "../styles/globals.css";
 		align-items: center;
 		justify-content: flex-start;
 		overflow: scroll;
-		
-		border-radius: 0px 0px 20px 20px;
-		background: rgba(255, 255, 255, 0.95);
-		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+		@media screen and (max-width: 850px) {
+			padding: 20px;
+
+			border-radius: 0px 0px 20px 20px;
+			background: rgba(255, 255, 255, 0.85);
+			box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+		}
 	}
 </style>

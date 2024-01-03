@@ -1,11 +1,38 @@
 ---
 import Global from "../components/Global.astro";
+import Fondo from "../backgrounds/BackContact.astro";
 ---
 
 <Global route="/contact">
-    <div class="primaryTitle_Primary">Contáctenos</div>
-    
-    <img src="../../contact.png">
+    <div class="general">
+        <div class="primaryTitle_Primary">Contáctenos</div>
+
+        <img src="../../contact.png" />
+
+        <a
+            href="https://www.linkedin.com/company/quickcrafts"
+            class="generalText botton"  target="_blank">LinkedIn</a
+        >
+    </div>
+    <Fondo />
 </Global>
 
-<style></style>
+<style>
+    .general {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .botton {
+        padding: 15px;
+        border-radius: 8px;
+
+        background: var(--primary-main);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+    }
+    .botton:hover {
+        color: var(--white);
+    }
+</style>

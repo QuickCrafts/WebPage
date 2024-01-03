@@ -1,13 +1,15 @@
 ---
 import Global from "../components/Global.astro";
-import TeamMember from "../interfaces/teamMember.astro";
+import TeamMember from "../interfaces/teamMember.ts";
 import { getImageMedia } from "../helpers/socialMedia";
+import Fondo from "../backgrounds/BackAbout.astro";
+import "../../public/team/PhotoPaula.jpg";
 
 const team: TeamMember[] = [
     {
         name: "Paula Guzmán",
         role: "UX/UI & Frontend Dev",
-        image: "../../PhotoPaula.jpg",
+        image: "../../public/team/PhotoPaula.jpg",
         socialMedia: [
             {
                 name: "GITHUB",
@@ -22,7 +24,7 @@ const team: TeamMember[] = [
     {
         name: "Daniel Osuna",
         role: "BD Architect & Frontend Dev",
-        image: "../../PhotoDaniel.png",
+        image: "../../public/team/PhotoDaniel.png",
         socialMedia: [
             {
                 name: "GITHUB",
@@ -37,7 +39,7 @@ const team: TeamMember[] = [
     {
         name: "Dylan Rivero",
         role: "DevOps BD & Backend Dev",
-        image: "../../PhotoDylan.jpg",
+        image: "../../public/team/PhotoDylan.jpg",
         socialMedia: [
             {
                 name: "GITHUB",
@@ -52,7 +54,7 @@ const team: TeamMember[] = [
     {
         name: "Sebastian Escandón",
         role: "QA & Backend Dev",
-        image: "../../PhotoSebastian.jpg",
+        image: "../../public/team/PhotoSebastian.jpg",
         socialMedia: [
             {
                 name: "GITHUB",
@@ -69,14 +71,12 @@ const team: TeamMember[] = [
 
 <Global route="/aboutUs">
     <div class="product">
-        <div class="presentation">
-            <div class="primaryTitle_Primary">¿Quienes Somos?</div>
-            <div class="generalText">
-                Somos una startup que desarrolla aplicaciones para mejorar los
-                principales aspectos de la vida de los usuarios. Nuestro enfoque
-                es ayudar a las personas a tener más confianza con sus finanzas,
-                tareas, hábitos y más.
-            </div>
+        <div class="primaryTitle_Primary">¿Quienes Somos?</div>
+        <div class="generalText presentation">
+            Somos una startup que desarrolla aplicaciones para mejorar los
+            principales aspectos de la vida de los usuarios. Nuestro enfoque es
+            ayudar a las personas a tener más confianza con sus finanzas,
+            tareas, hábitos y más.
         </div>
         <div class="primaryTitle_Secondary">Conoce a nuestro equipo</div>
         <div class="mosaic">
@@ -109,6 +109,7 @@ const team: TeamMember[] = [
             }
         </div>
     </div>
+    <Fondo />
 </Global>
 
 <style>
@@ -119,16 +120,20 @@ const team: TeamMember[] = [
         gap: 40px;
         flex: 1 0 0;
         align-self: stretch;
-        justify-content: flex-start;
+        justify-content: space-around;
+            text-align: center;
     }
     .presentation {
         display: flex;
-        width: 70%;
+        width: 80%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
+        text-align: justify;
         gap: 20px;
+        @media screen and (max-width: 450px) {
+            width: 100%;
+        }
     }
     .mosaic {
         display: flex;

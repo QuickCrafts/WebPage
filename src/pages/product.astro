@@ -45,6 +45,9 @@ const products: Proyects[] = [
                         <div class="generalText" style="width: 90%">
                             {product.description}
                         </div>
+                        <a href={product.url} target="_blank" class="botton">
+                            Conocer
+                        </a>
                     </div>
                 ))
             }
@@ -134,5 +137,20 @@ const products: Proyects[] = [
         align-items: center;
         overflow: scroll;
         width: 100%;
+    }
+    .botton {
+        text-align: center;
+        padding: 5px;
+        width: 150px;
+        border-radius: 8px;
+        color: var(--primary-main);
+        border: 1px solid var(--primary-main);
+
+        background: var(--white);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+    }
+    .botton:hover {
+        color: var(--white);
+        background: var(--primary-main);
     }
 </style>

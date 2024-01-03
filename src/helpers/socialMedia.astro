@@ -1,4 +1,5 @@
-import type { NameMedia } from "../interfaces/teamMember.ts";
+---
+import type { NameMedia } from "../interfaces/teamMember.astro";
 
 export const getImageMedia = (media: NameMedia, style: 'dark' | 'light'): string => {
     const route = '../../public/media/' + style;
@@ -24,3 +25,4 @@ export const getImageMedia = (media: NameMedia, style: 'dark' | 'light'): string
             return '';
     }
 }
+---

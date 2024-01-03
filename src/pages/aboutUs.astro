@@ -3,14 +3,15 @@ import Global from "../components/Global.astro";
 import TeamMember from "../interfaces/teamMember.astro";
 import { getImageMedia } from "../helpers/socialMedia.astro";
 import Fondo from "../backgrounds/BackAbout.astro";
-import PhotoPaula from "../../public/team/PhotoPaula.jpg";
-
+import PhotoDaniel from "../../public/team/PhotoDaniel.png";
+import PhotoDylan from "../../public/team/PhotoDylan.jpg";
+import PhotoSebastian from "../../public/team/PhotoSebastian.jpg";
 
 const team: TeamMember[] = [
     {
         name: "Paula Guzmán",
         role: "UX/UI & Frontend Dev",
-        image: PhotoPaula.src,
+        image: "/team/PhotoPaula.jpg",
         socialMedia: [
             {
                 name: "GITHUB",
@@ -25,7 +26,7 @@ const team: TeamMember[] = [
     {
         name: "Daniel Osuna",
         role: "BD Architect & Frontend Dev",
-        image: "../../public/team/PhotoDaniel.png",
+        image: PhotoDaniel.src,
         socialMedia: [
             {
                 name: "GITHUB",
@@ -40,7 +41,7 @@ const team: TeamMember[] = [
     {
         name: "Dylan Rivero",
         role: "DevOps BD & Backend Dev",
-        image: "../../public/team/PhotoDylan.jpg",
+        image: PhotoDylan.src,
         socialMedia: [
             {
                 name: "GITHUB",
@@ -55,7 +56,7 @@ const team: TeamMember[] = [
     {
         name: "Sebastian Escandón",
         role: "QA & Backend Dev",
-        image: "../../public/team/PhotoSebastian.jpg",
+        image: PhotoSebastian.src,
         socialMedia: [
             {
                 name: "GITHUB",

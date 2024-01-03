@@ -1,6 +1,6 @@
 ---
-import Global from "../components/Global.astro";
 import "../styles/globals.css";
+import Global from "../components/Global.astro";
 import Fondo from "../backgrounds/BackProducts.astro";
 import type Proyects from "../interfaces/proyects.astro";
 
@@ -25,6 +25,7 @@ const products: Proyects[] = [
 <Global route="/product">
     <div class="product">
         <div class="gridCards">
+            <img src="/icons/top.svg" />
             {
                 products.map((product) => (
                     <div class="productCards">
@@ -33,11 +34,13 @@ const products: Proyects[] = [
                         </a>
                         <div class="generalText">{product.slogan}</div>
                         <div class="carrusel">
+                            <img src="/icons/left.svg" />
                             <div class="galery">
                                 {product.galery.map((photo) => (
                                     <img src={photo.url} />
                                 ))}{" "}
                             </div>
+                            <img src="/icons/right.svg" />
                         </div>
                         <div class="generalText" style="width: 90%">
                             {product.description}
@@ -45,6 +48,7 @@ const products: Proyects[] = [
                     </div>
                 ))
             }
+            <img src="/icons/down.svg" />
         </div>
         <div class="presentation">
             <div class="primaryTitle_Primary">Productos</div>
@@ -83,7 +87,7 @@ const products: Proyects[] = [
     }
     .gridCards {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 15px;
         width: 100%;
         align-items: center;

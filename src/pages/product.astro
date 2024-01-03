@@ -3,7 +3,7 @@ import Global from "../components/Global.astro";
 import "../styles/globals.css";
 import Fondo from "../backgrounds/BackProducts.astro";
 import type Proyects from "../interfaces/proyects.astro";
-import { GoChevronLeft, GoChevronRight } from "react-icons/go";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const products: Proyects[] = [
     {
@@ -34,13 +34,13 @@ const products: Proyects[] = [
                         </a>
                         <div class="generalText">{product.slogan}</div>
                         <div class="carrusel">
-                            <GoChevronLeft />
+                            <FaAngleLeft />
                             <div class="galery">
                                 {product.galery.map((photo) => (
                                     <img src={photo.url} />
                                 ))}{" "}
                             </div>
-                            <GoChevronRight />
+                            <FaAngleRight />
                         </div>
                         <div class="generalText" style="width: 90%">{product.description}</div>
                     </div>

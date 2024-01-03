@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import Fondo from "../backgrounds/BackProducts.astro";
 import type Proyects from "../interfaces/proyects";
 import "../../public/products/QuickFins/QuickFins1.png";
+import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 
 const products: Proyects[] = [
     {
@@ -34,13 +35,13 @@ const products: Proyects[] = [
                         </a>
                         <div class="generalText">{product.slogan}</div>
                         <div class="carrusel">
-                            <p>...</p>
+                            <GoChevronLeft />
                             <div class="galery">
                                 {product.galery.map((photo) => (
                                     <img src={photo.url} />
                                 ))}{" "}
                             </div>
-                            <p>...</p>
+                            <GoChevronRight />
                         </div>
                         <div class="generalText" style="width: 90%">{product.description}</div>
                     </div>

@@ -3,7 +3,6 @@ import Global from "../components/Global.astro";
 import "../styles/globals.css";
 import Fondo from "../backgrounds/BackProducts.astro";
 import type Proyects from "../interfaces/proyects.astro";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const products: Proyects[] = [
     {
@@ -34,15 +33,15 @@ const products: Proyects[] = [
                         </a>
                         <div class="generalText">{product.slogan}</div>
                         <div class="carrusel">
-                            <FaAngleLeft />
                             <div class="galery">
                                 {product.galery.map((photo) => (
                                     <img src={photo.url} />
                                 ))}{" "}
                             </div>
-                            <FaAngleRight />
                         </div>
-                        <div class="generalText" style="width: 90%">{product.description}</div>
+                        <div class="generalText" style="width: 90%">
+                            {product.description}
+                        </div>
                     </div>
                 ))
             }

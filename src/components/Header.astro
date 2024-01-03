@@ -22,6 +22,7 @@ const routeTitles = [
 ---
 
 <>
+    <!-- NormalNav -->
     <div class="header">
         <div class="cont">
             <a href="/">
@@ -29,7 +30,7 @@ const routeTitles = [
             </a>
             <div class="elements">
                 {
-                    routeTitles.map((t) => (
+                    routeTitles.map((t: { route: string; label: string }) => (
                         <a href={t.route}>
                             <div
                                 class={
@@ -44,16 +45,36 @@ const routeTitles = [
             </div>
         </div>
     </div>
-    <div class="responsiveNav">
+
+    <!-- ResponsiveNav -->
+    <div id="toggle-menu" class="toggle-menu">
+        <label for="toggle-menu-checkbox">
+            <img src="/icons/bars.svg" />
+        </label>
+    </div>
+
+    <input
+        type="checkbox"
+        class="toggle-menu_checkbox"
+        id="toggle-menu-checkbox"
+    />
+    <div class="responsiveNav" id="responsiveNav">
         <div class="columnNav">
-            <img class="logo" src="../../public/LogoCompleto.png" />
+            <div class="headNav">
+                <img class="logo" src="/LogoCompleto.png" />
+                <label for="toggle-menu-checkbox">
+                    <img src="/icons/x.svg" />
+                </label>
+            </div>
             <div class="elementsResponsive">
                 {
-                    routeTitles.map((t) => (
+                    routeTitles.map((t: { route: string; label: string }) => (
                         <a href={t.route}>
                             <div
                                 class={
-                                    t.route === route ? "item-select" : "item"
+                                    t.route === route
+                                        ? "item-select generalText"
+                                        : "item generalText"
                                 }
                             >
                                 {t.label}
@@ -76,11 +97,20 @@ const routeTitles = [
         justify-content: center;
         background: #fff;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        @media screen and (max-width: 450px) {
+            padding: 15px;
+        }
     }
     .cont {
         display: flex;
         justify-content: space-between;
         width: 80vw;
+        @media screen and (max-width: 850px) {
+            width: 90vw;
+        }
+        @media screen and (max-width: 450px) {
+            width: 100vw;
+        }
     }
     .logo {
         height: 35px;
@@ -93,48 +123,8 @@ const routeTitles = [
         flex-shrink: 0;
 
         @media screen and (max-width: 850px) {
-            /*display: none !important;*/
-        }
-    }
-    .responsiveNav {
-        position: absolute;
-        height: 100vh;
-        width: 100vw;
-        justify-content: flex-end;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.5);
-        top: 0px;
-        right: 0px;
-        z-index: 1000;
-        /*display: flex !important;*/
-        display: none !important;
-
-        @media screen and (min-width: 850px) {
             display: none !important;
         }
-    }
-    .columnNav {
-        display: flex;
-        padding: 20px;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 20px;
-        overflow: hidden;
-        background: var(--secondary-light);
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
-        width: 250px;
-        height: 100vh;
-    }
-    .elementsResponsive {
-        display: flex;
-        gap: 10px;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width: 100%;
-        height: 100%;
-        padding: 0px 12px;
     }
     .item {
         display: flex;
@@ -168,5 +158,68 @@ const routeTitles = [
         cursor: pointer;
         color: var(--primary-main);
         border: 1px solid var(--primary-main);
+    }
+
+    .toggle-menu {
+        position: absolute;
+        top: 13px;
+        right: 40px;
+        @media screen and (min-width: 850px) {
+            display: none !important;
+        }
+        @media screen and (max-width: 450px) {
+            right: 13px;
+        }
+    }
+
+    .headNav {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+    .logo {
+        height: 35px;
+    }
+
+    .responsiveNav {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 0px;
+        right: 0px;
+        z-index: 1000;
+        display: none !important;
+    }
+    .toggle-menu_checkbox {
+        display: none !important;
+    }
+    .toggle-menu_checkbox:checked + .responsiveNav {
+        display: flex !important;
+    }
+
+    .columnNav {
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 40px;
+        overflow: hidden;
+        background: var(--secondary-light);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+        height: 100vh;
+    }
+    .elementsResponsive {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        padding: 0px 12px;
     }
 </style>

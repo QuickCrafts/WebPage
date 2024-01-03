@@ -78,6 +78,9 @@ a {
   letter-spacing: 1.5px;
 }
 
+img{
+  max-width: 100%;
+}
 .thumbs-wrapper.axis-vertical {
   display: none;
 }

@@ -42,9 +42,7 @@ const products: Proyects[] = [
                             </div>
                             <img src="/icons/right.svg" />
                         </div>
-                        <!-- <div class="generalText" style="width: 90%">
-                            {product.description}
-                        </div> comentado temporalmente-->
+                        <!-- <div class="generalText" style="width: 90%"> {product.description} </div> comentado temporalmente -->
                         <a href={product.url} target="_blank" class="botton">
                             Conocer
                         </a>
@@ -77,6 +75,7 @@ const products: Proyects[] = [
 
         @media screen and (max-width: 850px) {
             flex-direction: column-reverse;
+            gap: 10px;
         }
     }
     .presentation {
@@ -101,7 +100,7 @@ const products: Proyects[] = [
         flex-direction: column;
         align-items: center;
         width: 44vw;
-        height: 65vh;
+        height: auto;
         padding: 20px;
         gap: 10px;
         border-radius: 20px;
@@ -111,8 +110,8 @@ const products: Proyects[] = [
         text-align: justify;
 
         @media screen and (max-width: 850px) {
+            padding: 10px;
             width: 80vw;
-            height: 42vh;
         }
     }
     .productDescription {

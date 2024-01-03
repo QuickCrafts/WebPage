@@ -3,12 +3,14 @@ import Global from "../components/Global.astro";
 import TeamMember from "../interfaces/teamMember.astro";
 import { getImageMedia } from "../helpers/socialMedia.astro";
 import Fondo from "../backgrounds/BackAbout.astro";
+import PhotoPaula from "../../public/team/PhotoPaula.jpg";
+
 
 const team: TeamMember[] = [
     {
         name: "Paula Guzmán",
         role: "UX/UI & Frontend Dev",
-        image: "../../public/team/PhotoPaula.jpg",
+        image: PhotoPaula.src,
         socialMedia: [
             {
                 name: "GITHUB",

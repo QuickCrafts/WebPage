@@ -1,6 +1,4 @@
----
 export default interface Proyects {
-
     name: string;
     url: string;
     icon?: string;
@@ -12,4 +10,3 @@ export default interface Proyects {
 export interface Galery {
     url: string;
 }
----

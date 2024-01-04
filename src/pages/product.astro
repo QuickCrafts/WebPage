@@ -2,55 +2,12 @@
 import "../styles/globals.css";
 import Global from "../components/Global.astro";
 import Fondo from "../backgrounds/BackProducts.astro";
-import type Proyects from "../interfaces/proyects.astro";
-
-const products: Proyects[] = [
-    {
-        name: "QuickFins",
-        url: "https://quickfins.co/",
-        icon: "/products/QuickFins/QuickFins.png",
-        slogan: "El mejor amigo de tus finanzas personales.",
-        description:
-            "QuickFins es una aplicación web que te ayuda a gestionar tus finanzas personales, registrando ingresos, gastos y más.",
-        galery: [
-            { url: "/products/QuickFins/QuickFins1.png" },
-            { url: "/products/QuickFins/QuickFins2.png" },
-            { url: "/products/QuickFins/QuickFins3.png" },
-            { url: "/products/QuickFins/QuickFins4.png" },
-        ],
-    },
-];
+import CarouselCard from "../components/CarouselCard";
 ---
 
 <Global route="/product">
     <div class="product">
-        <div class="gridCards">
-            <img src="/icons/top.svg" />
-            {
-                products.map((product) => (
-                    <div class="productCards">
-                        <a href={product.url} target="_blank">
-                            <img class="productIcon" src={product.icon} />
-                        </a>
-                        <div class="generalText">{product.slogan}</div>
-                        <div class="carrusel">
-                            <img src="/icons/left.svg" />
-                            <div class="galery">
-                                {product.galery.map((photo) => (
-                                    <img src={photo.url} />
-                                ))}{" "}
-                            </div>
-                            <img src="/icons/right.svg" />
-                        </div>
-                        <!-- <div class="generalText" style="width: 90%"> {product.description} </div> comentado temporalmente -->
-                        <a href={product.url} target="_blank" class="botton">
-                            Conocer
-                        </a>
-                    </div>
-                ))
-            }
-            <img src="/icons/down.svg" />
-        </div>
+        <CarouselCard client:load/>
         <div class="presentation">
             <div class="primaryTitle_Primary">Productos</div>
             <div class="generalText">
@@ -86,72 +43,5 @@ const products: Proyects[] = [
         align-items: center;
         text-align: center;
         gap: 20px;
-    }
-    .gridCards {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-        align-items: center;
-        place-content: center;
-    }
-    .productCards {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 44vw;
-        height: auto;
-        padding: 20px;
-        gap: 10px;
-        border-radius: 20px;
-        border: 1px solid #d8d8d8;
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        text-align: justify;
-
-        @media screen and (max-width: 850px) {
-            padding: 10px;
-            width: 80vw;
-        }
-    }
-    .productDescription {
-        display: flex;
-        flex-direction: column;
-        text-align: justify;
-        padding: 0px 20px;
-        gap: 10px;
-        flex: 1 0 0;
-    }
-    .productIcon {
-        height: 50px;
-        width: 175px;
-    }
-    .carrusel {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-    }
-    .galery {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        overflow: scroll;
-        width: 100%;
-    }
-    .botton {
-        text-align: center;
-        padding: 5px;
-        width: 150px;
-        border-radius: 8px;
-        color: var(--primary-main);
-        border: 1px solid var(--primary-main);
-
-        background: var(--white);
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
-    }
-    .botton:hover {
-        color: var(--white);
-        background: var(--primary-main);
     }
 </style>

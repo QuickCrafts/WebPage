@@ -11,9 +11,15 @@ import Fondo from "../backgrounds/BackContact.astro";
 
         <a
             href="https://www.linkedin.com/company/quickcrafts"
-            class="generalText botton"
-            target="_blank"><p>LinkedIn</p></a
+            class="botton"
+            target="_blank"
         >
+            <img
+                src="/media/dark/linkedin.svg"
+                width="30px"
+                height="30px"
+            />
+        </a>
     </div>
     <Fondo />
 </Global>
@@ -29,14 +35,13 @@ import Fondo from "../backgrounds/BackContact.astro";
     .botton {
         display: flex;
         flex-direction: row;
-        padding: 15px;
-        border-radius: 8px;
+        justify-content: center;
+        width: 55px;
+        height: 55px;
+        padding: 10px;
+        border-radius: 50%;
         gap: 10px;
-
-        background: var(--primary-main);
         box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
-    }
-    .botton:hover {
-        color: var(--white);
+        background: var(--primary-main);
     }
 </style>

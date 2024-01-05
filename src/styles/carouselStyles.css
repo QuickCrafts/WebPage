@@ -1,32 +1,33 @@
 .gridCards {
     display: flex;
     flex-direction: column;
+    padding: 10px 0px;
     gap: 15px;
-    width: 100%;
-    height: 80vh;
+    width: 680px;
+    height: 560px;
     align-items: center;
     place-content: center;
     overflow: scroll;
     justify-content: flex-start;
 }
 
-.productCards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 44vw;
-    height: auto;
-    padding: 20px;
-    gap: 10px;
-    border-radius: 20px;
-    border: 1px solid #d8d8d8;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    text-align: justify;
+@media screen and (max-width: 1030px) {
+    .gridCards {
+        height: 470px;
+    }
+}
 
-    @media screen and(max-width: 850px) {
-        padding: 10px;
-        width: 80vw;
+@media screen and (max-width: 780px) {
+    .gridCards {
+        width: 650px;
+        height: 530px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .gridCards {
+        width: 360px;
+        height: 410px;
     }
 }
 
@@ -34,8 +35,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 44vw;
-    height: auto;
+    width: 650px;
     padding: 20px;
     gap: 10px;
     border-radius: 20px;
@@ -43,10 +43,26 @@
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     text-align: justify;
+}
 
-    @media screen and(max-width: 850px) {
+@media screen and (max-width: 1030px) {
+    .productCards {
         padding: 10px;
-        width: 80vw;
+        width: 510px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .productCards {
+        padding: 10px;
+        width: 620px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .productCards {
+        padding: 10px;
+        width: 340px;
     }
 }
 
@@ -88,4 +104,10 @@
 
     background: var(--white);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+}
+
+.sniper {
+    width: 100%;
+    --swiper-navigation-color: var(--primary-main);
+    --swiper-pagination-color: var(--primary-main);
 }

@@ -48,6 +48,11 @@ export default function SwiperCard() {
                 pagination={{
                     clickable: true,
                 }}
+                loop={true}
+                autoplay={{
+                    delay: 10000,
+                    disableOnInteraction: false,
+                }}
                 className="sniper"
                 modules={[Navigation, Pagination, Autoplay]}
             >

@@ -1,47 +1,26 @@
 ---
-import Global from "../components/Global.astro";
+import { Image } from "astro:assets";
+import Global from "../layouts/Global.astro";
 import Fondo from "../backgrounds/BackContact.astro";
+import "../styles/contactStyles.css";
+
+import Contacto from "../../public/contact.png";
+import Linkedin from "../../public/media/dark/linkedin.svg";
 ---
 
 <Global route="/contact">
     <div class="general">
         <div class="primaryTitle_Primary">Contáctenos</div>
 
-        <img src="../../contact.png" />
+        <Image src={Contacto} alt={Contacto.src} />
 
         <a
             href="https://www.linkedin.com/company/quickcrafts"
             class="botton"
             target="_blank"
         >
-            <img
-                src="/media/dark/linkedin.svg"
-                width="30px"
-                height="30px"
-            />
+            <Image src={Linkedin} alt={Linkedin.src} width={30} height={30} />
         </a>
     </div>
     <Fondo />
 </Global>
-
-<style>
-    .general {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .botton {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 55px;
-        height: 55px;
-        padding: 10px;
-        border-radius: 50%;
-        gap: 10px;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
-        background: var(--primary-main);
-    }
-</style>

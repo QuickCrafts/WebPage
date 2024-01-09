@@ -2,10 +2,16 @@ import React from "react";
 import type Proyects from "../interfaces/proyects";
 import "../styles/carouselStyles.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, Keyboard } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+import QF from "../../public/products/QuickFins/QuickFins.png";
+import QF1 from "../../public/products/QuickFins/QuickFins1.png";
+import QF2 from "../../public/products/QuickFins/QuickFins2.png";
+import QF3 from "../../public/products/QuickFins/QuickFins3.png";
+import QF4 from "../../public/products/QuickFins/QuickFins4.png";
 
 export default function SwiperCard() {
 
@@ -13,30 +19,32 @@ export default function SwiperCard() {
         {
             name: "QuickFins",
             url: "https://quickfins.co/",
-            icon: "/products/QuickFins/QuickFins.png",
+            icon: QF,
             slogan: "El mejor amigo de tus finanzas personales.",
             description:
                 "QuickFins es una aplicación web que te ayuda a gestionar tus finanzas personales, registrando ingresos, gastos y más.",
             galery: [
-                { url: "/products/QuickFins/QuickFins1.png" },
-                { url: "/products/QuickFins/QuickFins2.png" },
-                { url: "/products/QuickFins/QuickFins3.png" },
-                { url: "/products/QuickFins/QuickFins4.png" },
+                { url: QF1 },
+                { url: QF2 },
+                { url: QF3 },
+                { url: QF4 },
             ],
+            key: "QuickFins1",
         },
         {
             name: "QuickFins",
             url: "https://quickfins.co/",
-            icon: "/products/QuickFins/QuickFins.png",
+            icon: QF,
             slogan: "El mejor amigo de tus finanzas personales.",
             description:
                 "QuickFins es una aplicación web que te ayuda a gestionar tus finanzas personales, registrando ingresos, gastos y más.",
             galery: [
-                { url: "/products/QuickFins/QuickFins1.png" },
-                { url: "/products/QuickFins/QuickFins2.png" },
-                { url: "/products/QuickFins/QuickFins3.png" },
-                { url: "/products/QuickFins/QuickFins4.png" },
+                { url: QF1 },
+                { url: QF2 },
+                { url: QF3 },
+                { url: QF4 },
             ],
+            key: "QuickFins2",
         },
     ];
 
@@ -57,11 +65,10 @@ export default function SwiperCard() {
                 modules={[Navigation, Pagination, Autoplay]}
             >
                 {products.map((product) => (
-
                     <SwiperSlide>
-                        <div className="productCards" key={product.name}>
+                        <div className="productCards" key={product.key}>
                             <a href={product.url} target="_blank">
-                                <img className="productIcon" src={product.icon} alt={product.name} />
+                                    <img src={product.icon?.src} alt={product.name} className="productIcon"/>
                             </a>
                             <p>{product.slogan}</p>
                             <Swiper
@@ -81,9 +88,8 @@ export default function SwiperCard() {
                                 {product.galery.map((image: any) => (
                                     <SwiperSlide>
                                         <div className="galery" key={image.url}>
-                                            <img src={image.url} />
+                                            <img src={image.url.src} alt={image.url}/>
                                         </div>
-
                                     </SwiperSlide>
                                 ))}
                             </Swiper>

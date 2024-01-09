@@ -1,14 +1,23 @@
 ---
-import Global from "../components/Global.astro";
+import { Image } from "astro:assets";
+
+import Global from "../layouts/Global.astro";
+import Fondo from "../backgrounds/BackAbout.astro";
+import "../styles/aboutUsStyles.css"
+
 import TeamMember from "../interfaces/teamMember.astro";
 import { getImageMedia } from "../helpers/socialMedia.astro";
-import Fondo from "../backgrounds/BackAbout.astro";
+
+import PhotoPaula from "../../public/team/PhotoPaula.jpg";
+import PhotoDaniel from "../../public/team/PhotoDaniel.jpg";
+import PhotoDylan from "../../public/team/PhotoDylan.jpg";
+import PhotoSebastian from "../../public/team/PhotoSebastian.jpg";
 
 const team: TeamMember[] = [
     {
         name: "Paula Guzmán",
         role: "UX/UI & Frontend Dev",
-        image: "/team/PhotoPaula.jpg",
+        image: PhotoPaula,
         socialMedia: [
             {
                 name: "GITHUB",
@@ -23,7 +32,7 @@ const team: TeamMember[] = [
     {
         name: "Daniel Osuna",
         role: "BD Architect & Frontend Dev",
-        image: "/team/PhotoDaniel.jpg",
+        image: PhotoDaniel,
         socialMedia: [
             {
                 name: "GITHUB",
@@ -38,7 +47,7 @@ const team: TeamMember[] = [
     {
         name: "Dylan Rivero",
         role: "DevOps BD & Backend Dev",
-        image: "/team/PhotoDylan.jpg",
+        image: PhotoDylan,
         socialMedia: [
             {
                 name: "GITHUB",
@@ -53,7 +62,7 @@ const team: TeamMember[] = [
     {
         name: "Sebastian Escandón",
         role: "QA & Backend Dev",
-        image: "/team/PhotoSebastian.jpg",
+        image: PhotoSebastian,
         socialMedia: [
             {
                 name: "GITHUB",
@@ -83,7 +92,7 @@ const team: TeamMember[] = [
                 team.map((member) => (
                     <div class="card">
                         <div class="photo">
-                            <img src={member.image || ""} />
+                            <img src={member.image?.src} alt={member.name}/>
                         </div>
                         <div class="description">
                             <div class="name">{member.name}</div>
@@ -92,12 +101,11 @@ const team: TeamMember[] = [
                                 {member.socialMedia.map((s) => (
                                     <div class="icono">
                                         <a href={s.link} target="_blank">
-                                            <img
-                                                src={getImageMedia(
+                                            <img src={getImageMedia(
                                                     s.name,
                                                     "dark",
-                                                )}
-                                            />
+                                                )
+                                            } alt={s.name}/>
                                         </a>
                                     </div>
                                 ))}
@@ -110,105 +118,3 @@ const team: TeamMember[] = [
     </div>
     <Fondo />
 </Global>
-
-<style>
-    .product {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-        flex: 1 0 0;
-        align-self: stretch;
-        justify-content: space-around;
-            text-align: center;
-    }
-    .presentation {
-        display: flex;
-        width: 80%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: justify;
-        gap: 20px;
-        @media screen and (max-width: 450px) {
-            width: 100%;
-        }
-    }
-    .mosaic {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        width: 100%;
-        place-content: center;
-        align-items: center;
-    }
-    .card {
-        display: flex;
-        width: 260px;
-        height: 330px;
-        min-width: 260px;
-        min-height: 330px;
-        padding: 14px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        flex-shrink: 0;
-        border-style: solid;
-        border-width: 1px;
-        border-radius: 8px;
-        background: rgb(255, 255, 255);
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
-    }
-    .photo {
-        max-width: 200px;
-        max-height: 200px;
-        min-width: 200px;
-        min-height: 200px;
-        width: 200px;
-        height: 200px;
-        align-self: center;
-        border-radius: 8px;
-        background: var(--gray);
-    }
-    .description {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        align-self: stretch;
-    }
-    .name {
-        align-self: stretch;
-        color: var(--Black-sentence, #4f4a4a);
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 33px;
-        letter-spacing: -1.5px;
-    }
-    .role {
-        align-self: stretch;
-        color: var(--Black-sentence, #4f4a4a);
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
-    .socialMediaContainer {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        align-self: center;
-    }
-    .icono {
-        display: flex;
-        width: 25px;
-        height: 25px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        background: var(--primary-light);
-    }
-</style>

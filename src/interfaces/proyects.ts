@@ -1,12 +1,13 @@
 export default interface Proyects {
     name: string;
     url: string;
-    icon?: string;
+    icon?: ImageMetadata;
     description: string;
     slogan: string;
     galery: Galery[];
+    key: string;
 }
 
 export interface Galery {
-    url: string;
+    url: ImageMetadata;
 }

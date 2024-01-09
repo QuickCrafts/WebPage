@@ -1,0 +1,51 @@
+---
+import Layout from "./Layout.astro";
+import Header from "../components/Header.astro";
+import "../styles/globals.css";
+const { route } = Astro.props;
+---
+
+<Layout title="QuickCrafts">
+	<main>
+		<Header route={route} />
+		<div class="general_page">
+			<div class="general_box">
+				<slot />
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		height: 100vh;
+		width: 100vw;
+		overflow: hidden;
+	}
+	.general_page {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 50px 0px 10px 0px;
+		line-height: 1.6;
+	}
+	.general_box {
+		display: flex;
+		flex-direction: column;
+		padding: 40px;
+		height: 90vh;
+		width: 90vw;
+		align-items: center;
+		justify-content: flex-start;
+		overflow: scroll;
+	}
+
+	@media screen and (max-width: 850px) {
+		.general_box {
+			padding: 20px;
+			border-radius: 0px 0px 20px 20px;
+			background: rgba(255, 255, 255, 0.85);
+			box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+		}
+	}
+</style>

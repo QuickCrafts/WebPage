@@ -6,5 +6,8 @@ import react from "@astrojs/react"
 // https://astro.build/config
 export default defineConfig({
   site: 'https://quickcrafts.co',
-  integrations: [tailwind(), react()]
+  integrations: [tailwind(), react()],
+  image: {
+    domains: ["astro.build"],
+  }
 });

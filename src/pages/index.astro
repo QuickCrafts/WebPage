@@ -1,13 +1,20 @@
 ---
-import Global from "../components/Global.astro";
+import { Image } from "astro:assets";
+
+import Global from "../layouts/Global.astro";
 import Fondo from "../backgrounds/BackHome.astro";
+import "../styles/indexStyles.css";
+
+import LogoQuickCrafts from "../../public/LogoCompleto.png";
+import Team from "../../public/team.png";
+import Linkedin from "../../public/media/dark/linkedin.svg";
 ---
 
 <Global route="/">
 	<div class="general">
 		<div class="home">
 			<div class="presentation">
-				<img src="../../LogoCompleto.png" />
+				<Image src={LogoQuickCrafts} alt="QuickCrafts"/>
 				<div class="secondarySubtitle">
 					Desarrollando para mejorar tu vida
 				</div>
@@ -16,75 +23,13 @@ import Fondo from "../backgrounds/BackHome.astro";
 					class="botton"
 					target="_blank"
 				>
-					<img
-						src="/media/dark/linkedin.svg"
-						width="30px"
-						height="30px"
-					/>
+				<Image src={Linkedin} alt={"LinkedIn"} width={30} height={30}/>
 				</a>
 			</div>
 			<div class="imagen">
-				<img src="../../team.png" />
+				<Image src={Team} alt="team">
 			</div>
 		</div>
 	</div>
 	<Fondo />
 </Global>
-
-<style>
-	.general {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100vh;
-	}
-	.home {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-around;
-		gap: 40px;
-		@media screen and (max-width: 850px) {
-			flex-direction: column;
-			gap: 0px;
-		}
-		@media screen and (max-width: 450px) {
-			flex-direction: column;
-			gap: 40px;
-		}
-	}
-	.presentation {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		gap: 20px;
-		width: 40%;
-
-		@media screen and (max-width: 850px) {
-			width: 80%;
-		}
-	}
-	.imagen {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 31vw;
-		@media screen and (max-width: 850px) {
-			width: 80%;
-		}
-	}
-	.botton {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 55px;
-        height: 55px;
-        padding: 10px;
-        border-radius: 50%;
-        gap: 10px;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
-        background: var(--primary-main);
-	}
-</style>

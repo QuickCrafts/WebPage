@@ -3,8 +3,9 @@
     flex-direction: column;
     padding: 10px 0px;
     gap: 15px;
+    max-width: 1274px;
     width: 70%;
-    height: 560px;
+    height: 670px;
     align-items: center;
     place-content: center;
     overflow: scroll;
@@ -14,19 +15,19 @@
 @media screen and (max-width: 1030px) {
     .gridCards {
         width: 70%;
-        height: 730px;
+        height: 760px;
     }
 }
 
 @media screen and (max-width: 780px) {
     .gridCards {
-        width: 650px;
+        width: 100%;
     }
 }
 
 @media screen and (max-width: 440px) {
     .gridCards {
-        width: 100%;
+        height: 700px;
     }
 }
 

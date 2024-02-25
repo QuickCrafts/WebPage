@@ -78,9 +78,10 @@ a {
   letter-spacing: 1.5px;
 }
 
-img{
+img {
   max-width: 100%;
 }
+
 .thumbs-wrapper.axis-vertical {
   display: none;
 }
@@ -276,5 +277,12 @@ menu {
   font-size: 19px;
   font-style: normal;
   font-weight: 600;
+  line-height: normal;
+}
+
+.miniText {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
   line-height: normal;
 }

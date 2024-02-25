@@ -1,21 +1,21 @@
 ---
 import Global from "../layouts/Global.astro";
 import Fondo from "../backgrounds/BackProducts.astro";
-import "../styles/productStyles.css"
+import "../styles/productStyles.css";
 
 import SwiperCard from "../components/SwiperCard";
 ---
 
 <Global route="/product">
-    <div class="product">
-        <SwiperCard client:load />
-        <div class="presentation">
-            <div class="primaryTitle_Primary">Productos</div>
-            <div class="generalText">
-                Con estas herramientas queremos ayudarte a mejorar diferentes
-                aspectos de tu vida diaria.
-            </div>
-        </div>
+  <div class="product">
+    <SwiperCard client:load />
+    <div class="presentation">
+      <div class="primaryTitle_Primary">Productos</div>
+      <div class="generalText">
+        Con estas herramientas queremos ayudarte a mejorar diferentes aspectos
+        de tu vida diaria.
+      </div>
     </div>
-    <Fondo />
+  </div>
+  <Fondo />
 </Global>

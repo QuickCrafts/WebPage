@@ -8,13 +8,14 @@
     flex: 1 0 0;
     height: 100%;
 }
+
 .presentation {
     display: flex;
-    width: 40%;
+    width: 25%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: justify;
+    text-align: center;
     gap: 20px;
 }
 
@@ -23,6 +24,7 @@
         flex-direction: column-reverse;
         gap: 10px;
     }
+
     .presentation {
         width: 100%;
     }

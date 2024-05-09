@@ -55,20 +55,21 @@ export default function SwiperCard() {
         }}
         loop={true}
         autoplay={{
-          delay: 10000,
+          delay: 10950,
           disableOnInteraction: false,
         }}
         className="sniper"
         modules={[Navigation, Pagination, Autoplay]}
       >
         {products.map((product) => (
-          <SwiperSlide>
-            <div className="productCards" key={product.key}>
+          <SwiperSlide key={product.index}>
+            <div className="productCards">
               <a href={product.url} target="_blank">
                 <img
                   src={product.icon?.src}
                   alt={product.name}
                   className="productIcon"
+                  key={product.index}
                 />
               </a>
               <p>{product.slogan}</p>
@@ -88,7 +89,7 @@ export default function SwiperCard() {
                   modules={[Navigation, Pagination, Autoplay]}
                 >
                   {product.galery.map((image: any) => (
-                    <SwiperSlide>
+                    <SwiperSlide key={image.index}>
                       <div className="galery" key={image.url}>
                         <img src={image.url.src} alt={image.url} />
                       </div>
